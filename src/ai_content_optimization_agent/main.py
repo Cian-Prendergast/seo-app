@@ -1,21 +1,25 @@
-
 import warnings
 import os
 from dotenv import load_dotenv
+
+# Load environment variables FIRST
+load_dotenv()
+
+# Check required environment variables before importing modules that use them
+required_env_vars = ["MODEL", "GEMINI_API_KEY"]
+missing_vars = [var for var in required_env_vars if not os.getenv(var)]
+if missing_vars:
+    raise EnvironmentError(f"Missing required environment variables: {', '.join(missing_vars)}")
+
 from workflow import create_workflow, save_output_files
 from state import ContentOptimizationState
 
-load_dotenv()
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
 def run():
     url = input("Please enter the URL to process: ").strip()
     if not url:
         raise ValueError("No URL provided. Exiting.")
-    required_env_vars = ["MODEL", "GEMINI_API_KEY"]
-    missing_vars = [var for var in required_env_vars if not os.getenv(var)]
-    if missing_vars:
-        raise ValueError(f"Missing required environment variables: {', '.join(missing_vars)}")
     initial_state: ContentOptimizationState = {
         "url": url,
         "title": None,

@@ -1,8 +1,8 @@
-from typing import TypedDict, Optional, List, Dict, Any
+from typing import TypedDict, Optional, List, Dict, Any, Annotated
 from pydantic import BaseModel
 
 class ContentOptimizationState(TypedDict):
-    url: str
+    url: Annotated[str, "single"]  # Only one value allowed per step
     title: Optional[str]
     page_content: Optional[str]
     search_results: Optional[str]

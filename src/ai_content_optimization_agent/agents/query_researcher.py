@@ -30,7 +30,7 @@ class QueryResearcherAgent(BaseAgent):
             Provide comprehensive search results and insights.
             """)
             messages = [system_message, human_message]
-            tools = [{"googleSearch": {}}]
+            tools = [{"google_search": {}}]  # Fixed tool name
             search_results = self.invoke_llm(messages, tools=tools)
             self.log("Research completed successfully")
             output_files = state.get("output_files", {})

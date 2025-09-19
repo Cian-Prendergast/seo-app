@@ -1,4 +1,4 @@
-from langgraph.graph import END, MessageGraph
+from langgraph.graph import END, MessageGraph, StateGraph, START
 from state import ContentOptimizationState
 from agents.title_scraper import title_scraper_node
 from agents.query_researcher import query_researcher_node
@@ -21,7 +21,7 @@ def create_workflow():
     workflow.add_edge("title_scraper", "query_researcher")
     workflow.add_edge("query_researcher", "query_extractor")
     workflow.add_edge("query_extractor", "ai_overview_retriever")
-    workflow.add_edge("query_researcher", "summarizer")
+    workflow.add_edge("query_extractor", "summarizer")  # Only query_extractor triggers summarizer to avoid parallel url updates
     workflow.add_edge(["ai_overview_retriever", "summarizer"], "content_optimizer")
     workflow.add_edge("content_optimizer", END)
     return workflow.compile()

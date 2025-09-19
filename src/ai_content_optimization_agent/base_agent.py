@@ -12,14 +12,25 @@ class BaseAgent(ABC):
         self.name = name
         self.verbose = verbose
         self.model = model or os.getenv("MODEL", "gemini/gemini-2.5-flash")
-        self.llm = ChatGoogleGenerativeAI(model=self.model)
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError("GEMINI_API_KEY environment variable is required")
+        self.llm = ChatGoogleGenerativeAI(
+            model=self.model,
+            google_api_key=api_key,
+            temperature=0.1,
+            convert_system_message_to_human=True
+        )
         self.logger = logging.getLogger(f"agent.{name}")
+
     def log(self, message: str, level: str = "info"):
         if self.verbose:
             getattr(self.logger, level)(f"[{self.name}] {message}")
+
     @abstractmethod
     def execute(self, state: ContentOptimizationState) -> ContentOptimizationState:
         pass
+
     def invoke_llm(self, messages: List[Any], tools: Optional[List] = None) -> str:
         try:
             if tools:
