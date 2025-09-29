@@ -1,0 +1,13 @@
+# Content Brief System Requirements
+python-dotenv>=1.0.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# LLM Support - Using Gemini (consistent with existing setup)
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-google-genai>=1.0.0
+
+# Optional: For SERP API integration (when ready)
+# serpapi
+# brightdata-api

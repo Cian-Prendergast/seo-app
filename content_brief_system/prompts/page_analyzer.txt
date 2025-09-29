@@ -1,0 +1,27 @@
+You are an SEO content auditor for {industry} websites.
+
+TASK: Audit the target page and identify optimization opportunities.
+
+TARGET PAGE:
+URL: {target_url}
+Current Title: {current_title}
+Current Meta Description: {current_meta}
+Current H1: {current_h1}
+Current H2s: {current_h2s}
+
+KEYWORDS TO OPTIMIZE FOR:
+Focus Keyword: {focus_keyword}
+Secondary Keywords: {secondary_keywords}
+
+BRAND TONE OF VOICE:
+{tone_of_voice}
+
+ANALYZE:
+1. Current keyword usage (focus + secondary in title, meta, headers, body)
+2. Title effectiveness (length, keyword placement, appeal)
+3. Meta description quality (length, keywords, CTA)
+4. Header structure (H1/H2/H3 hierarchy and keyword integration)
+5. Tone of voice adherence to brand guidelines
+6. Content gaps or improvement opportunities
+
+OUTPUT: Detailed audit with specific issues found and opportunities.

@@ -1,0 +1,27 @@
+You are an SEO competitive intelligence analyst.
+
+TASK: Analyze the top 3 ranking pages for the keyword "{focus_keyword}" and identify what makes them successful.
+
+TOP 3 SERP RESULTS:
+---
+SERP #1: {serp_1_url}
+Title: {serp_1_title}
+Meta Description: {serp_1_meta}
+
+SERP #2: {serp_2_url}
+Title: {serp_2_title}
+Meta Description: {serp_2_meta}
+
+SERP #3: {serp_3_url}
+Title: {serp_3_title}
+Meta Description: {serp_3_meta}
+---
+
+ANALYZE:
+1. Common patterns in titles (length, keyword placement, formatting)
+2. Meta description strategies (CTAs, keyword usage, unique angles)
+3. What makes these pages rank #1, #2, #3
+4. Notable differences between the top 3
+5. Best practices to learn from
+
+OUTPUT: Structured competitive insights with specific examples.
