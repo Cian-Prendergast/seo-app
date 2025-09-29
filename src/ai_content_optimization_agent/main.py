@@ -79,6 +79,10 @@ def run():
         print(f"🚀 Analyzing '{url}' for content briefing...")
         print(f"📊 Focus keyword: {focus_keyword or 'Auto-detect'}")
         print(f"📊 Language: {language}")
+        print(f"📊 Tone: {tone_of_voice}")
+        if secondary_keywords:
+            print(f"📊 Secondary keywords: {', '.join(secondary_keywords)}")
+        print()
         
         app = create_workflow()
         final_state = app.invoke(initial_state)
@@ -87,10 +91,27 @@ def run():
             print("✅ Analysis completed successfully!")
             save_output_files(final_state)
             
+            # Print summary of generated content
+            print(f"\n📊 BRIEFING SUMMARY:")
+            print(f"   🎯 Focus Keyword: {final_state.get('focus_keyword') or 'Auto-detected from content'}")
+            print(f"   📄 Page Type: {final_state.get('page_type', 'Not determined')}")
+            print(f"   🎢 Funnel Stage: {final_state.get('funnel_stage', 'Not determined')}")
+            print(f"   📝 Page Title: {final_state.get('page_title_suggestion', 'Not generated')}")
+            if final_state.get('competitor_urls'):
+                print(f"   🏆 Competitors Found: {len(final_state.get('competitor_urls', []))}")
+            print()
+            
             # NEW SAVE ING BRIEFING FORMAT
             from briefing_formatter import generate_ing_briefing
             briefing_docx = generate_ing_briefing(final_state)
             print(f"✅ Saved ING Content Briefing: {briefing_docx}")
+            
+            # Print file locations
+            print(f"\n📁 Generated Files:")
+            for filename in final_state.get('output_files', {}).keys():
+                print(f"   📄 output/{filename}")
+            print(f"   📄 {briefing_docx}")
+            print()
             
         else:
             print(f"❌ Workflow ended at step: {final_state['current_step']}")

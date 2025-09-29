@@ -9,18 +9,60 @@ from agents.optimizer import optimizer_node
 from agents.briefing_generator import briefing_generator_node
 import logging
 
+# Wrapper functions to add progress indicators
+def title_scraper_wrapper(state):
+    print("🏃‍♂️ Step 1/7: Extracting page title and content...")
+    result = title_scraper_node(state)
+    print(f"   ✅ Title: {result.get('title', 'Unknown')}")
+    print()
+    return result
+
+def query_researcher_wrapper(state):
+    print("🏃‍♂️ Step 2/7: Researching search landscape...")
+    result = query_researcher_node(state)
+    return result
+
+def query_extractor_wrapper(state):
+    print("🏃‍♂️ Step 3/7: Extracting main search query...")
+    result = query_extractor_node(state)
+    return result
+
+def ai_overview_wrapper(state):
+    print("🏃‍♂️ Step 4/7: Retrieving AI overview...")
+    result = ai_overview_node(state)
+    return result
+
+def summarizer_wrapper(state):
+    print("🏃‍♂️ Step 5/7: Summarizing competitive landscape...")
+    result = summarizer_node(state)
+    print(f"   ✅ Summary generated")
+    print()
+    return result
+
+def optimizer_wrapper(state):
+    print("🏃‍♂️ Step 6/7: Generating optimization report...")
+    result = optimizer_node(state)
+    print(f"   ✅ Report completed")
+    print()
+    return result
+
+def briefing_generator_wrapper(state):
+    print("🏃‍♂️ Step 7/7: Generating ING content briefing...")
+    result = briefing_generator_node(state)
+    return result
+
 def create_workflow():
     logging.basicConfig(level=logging.INFO)
     workflow = StateGraph(ContentOptimizationState)
     
-    # Add all nodes
-    workflow.add_node("title_scraper", title_scraper_node)
-    workflow.add_node("query_researcher", query_researcher_node)
-    workflow.add_node("query_extractor", query_extractor_node)
-    workflow.add_node("ai_overview_retriever", ai_overview_node)
-    workflow.add_node("summarizer", summarizer_node)
-    workflow.add_node("content_optimizer", optimizer_node)
-    workflow.add_node("briefing_generator", briefing_generator_node)
+    # Add all nodes with wrapper functions
+    workflow.add_node("title_scraper", title_scraper_wrapper)
+    workflow.add_node("query_researcher", query_researcher_wrapper)
+    workflow.add_node("query_extractor", query_extractor_wrapper)
+    workflow.add_node("ai_overview_retriever", ai_overview_wrapper)
+    workflow.add_node("summarizer", summarizer_wrapper)
+    workflow.add_node("content_optimizer", optimizer_wrapper)
+    workflow.add_node("briefing_generator", briefing_generator_wrapper)
     
     # Sequential flow - no parallel execution
     workflow.add_edge(START, "title_scraper")

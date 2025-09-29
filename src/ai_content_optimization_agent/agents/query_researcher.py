@@ -30,9 +30,19 @@ class QueryResearcherAgent(BaseAgent):
             Provide comprehensive search results and insights.
             """)
             messages = [system_message, human_message]
-            tools = [{"googleSearch": {}}]  # Fixed tool name - camelCase
-            search_results = self.invoke_llm(messages, tools=tools)
+            # Don't pass tools - the LLM integration adds googleSearch automatically
+            search_results = self.invoke_llm(messages)
             self.log("Research completed successfully")
+            
+            # Print search results summary
+            print(f"🔍 Search Results Summary:")
+            print(f"   📊 Length: {len(search_results)} characters")
+            if search_results and len(search_results) > 500:
+                print(f"   📝 Preview: {search_results[:500]}...")
+            else:
+                print(f"   📝 Content: {search_results}")
+            print()
+            
             output_files = state.get("output_files", {})
             output_files["query_fanout.md"] = search_results
             return {

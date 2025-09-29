@@ -22,6 +22,15 @@ class BriefingGeneratorAgent(BaseAgent):
         # Extract competitor URLs from search results if available
         competitor_urls = self._extract_competitor_urls(search_results)
         
+        # Print competitor analysis
+        print(f"🏆 Competitor Analysis:")
+        if competitor_urls:
+            for i, url in enumerate(competitor_urls, 1):
+                print(f"   {i}. {url}")
+        else:
+            print(f"   No competitor URLs found in search results")
+        print()
+        
         # Generate mock data for missing analysis fields (for initial implementation)
         keyword_data = {"keyword_variations": []}
         competitive_analysis = {"summary": {"common_patterns": []}}
@@ -30,13 +39,30 @@ class BriefingGeneratorAgent(BaseAgent):
         
         try:
             # Generate each briefing component
+            print(f"📋 Generating ING Content Briefing Components...")
+            
             page_type = self._determine_page_type(state)
+            print(f"   📄 Page Type: {page_type}")
+            
             funnel_stage = self._determine_funnel_stage(state)
+            print(f"   🎯 Funnel Stage: {funnel_stage}")
+            
             notable_observations = self._generate_notable_observations(state)
+            print(f"   👀 Notable Observations: {notable_observations[:100]}...")
+            
             page_title = self._generate_page_title(focus_keyword, language)
+            print(f"   📝 Page Title: {page_title}")
+            
             meta_description = self._generate_meta_description(focus_keyword, secondary_keywords, language)
+            print(f"   📋 Meta Description: {meta_description}")
+            
             header_suggestions = self._generate_header_suggestions(state)
+            print(f"   📑 H1 Suggestion: {header_suggestions.get('h1', 'None')}")
+            print(f"   📑 H2 Count: {len(header_suggestions.get('h2', []))}")
+            
             body_copy_outline = self._generate_body_copy_outline(state)
+            print(f"   📖 Body Copy Outline: {len(body_copy_outline)} characters")
+            print()
             
             self.log("Briefing generation completed")
             

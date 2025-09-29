@@ -30,6 +30,11 @@ class MainQueryExtractorAgent(BaseAgent):
             messages = [system_message, human_message]
             main_query = self.invoke_llm(messages)
             self.log(f"Extracted main query: {main_query}")
+            
+            # Print extracted query
+            print(f"🎯 Main Query Extracted: '{main_query.strip()}'")
+            print()
+            
             return {
                 **state,
                 "main_query": main_query.strip(),

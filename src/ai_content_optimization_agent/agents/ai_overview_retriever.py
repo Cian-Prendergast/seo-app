@@ -40,6 +40,15 @@ class AIOverviewRetrieverAgent(BaseAgent):
             output_files = state.get("output_files", {})
             output_files["ai_overview.md"] = ai_overview
             
+            # Print AI overview summary
+            print(f"🤖 AI Overview Retrieved:")
+            print(f"   📊 Length: {len(ai_overview)} characters")
+            if ai_overview and len(ai_overview) > 300:
+                print(f"   📝 Preview: {ai_overview[:300]}...")
+            else:
+                print(f"   📝 Content: {ai_overview}")
+            print()
+            
             return {
                 **state,
                 "ai_overview": ai_overview,
