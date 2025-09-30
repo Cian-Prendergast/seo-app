@@ -1,0 +1,9 @@
+Research this title comprehensively: "{title}"
+
+Perform web searches to understand:
+- What users are searching for related to this topic
+- Key questions and subtopics
+- Related keywords and phrases
+- Market context and trends
+
+Provide comprehensive search results and insights.

@@ -1,0 +1,7 @@
+From the following query fan-out, extract the main search query and transform it 
+into a concise, Google-like keyphrase that users would type into Google:
+
+Query Fan-out:
+{search_results}
+
+Return only the main search query as a short, clear phrase.

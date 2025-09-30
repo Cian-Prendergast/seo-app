@@ -1,0 +1,10 @@
+Generate a comprehensive summary from this query fan-out:
+{search_results}
+
+Create a structured Markdown summary that includes:
+- Main themes and topics
+- Key insights and patterns
+- Important keywords and phrases
+- User intent analysis
+
+Format the output as clean, well-structured Markdown.

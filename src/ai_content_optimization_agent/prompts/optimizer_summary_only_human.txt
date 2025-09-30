@@ -1,0 +1,19 @@
+Analyze this content for optimization opportunities:
+
+**Page Title:** {title}
+**Main Query:** {main_query}
+
+## Query Fan-Out Summary:
+{summary}
+
+**Note:** No AI overview data was available for this analysis.
+
+Please provide:
+1. **Executive Summary** - Key optimization opportunities
+2. **Query Pattern Analysis** - Insights from search behavior
+3. **Content Optimization Recommendations** - Specific improvements
+4. **SEO Strategy** - How to target the identified search patterns
+5. **Content Gaps** - What might be missing from current content
+6. **Next Steps** - Prioritized action items
+
+Base your analysis entirely on the query fanout patterns and search intent signals.

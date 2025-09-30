@@ -1,49 +1,60 @@
-Okay, I understand. I need to research the topic "Building an AI Podcast Generator: A Deep Technical Dive" to understand user search patterns, key questions, related keywords, and market trends. I will use Google Search to perform this research.
-Okay, I've performed a comprehensive web search on "Building an AI Podcast Generator: A Deep Technical Dive." Here's a breakdown of the search results and insights:
+Okay, I will perform a comprehensive web search to understand the query fan-out for the title "Zelf beleggen? Lees hier hoe je zelf kunt beginnen - ING". This involves identifying what users are searching for related to this topic, key questions and subtopics, related keywords and phrases, and the market context and trends.
+The user is asking me to research the title "Zelf beleggen? Lees hier hoe je zelf kunt beginnen - ING" to understand the query fan-out. Here's a breakdown of what people search for in relation to this topic:
 
-**I. User Search Intent & Key Questions:**
+**1. Core Topic: Self-Directed Investing at ING**
 
-*   **How to build an AI podcast generator?** Users are looking for tutorials, guides, and step-by-step instructions on creating their own AI podcast generators. (e.g., "[https://www.youtube.com/watch?v=a9PiulNAgJ8](https://www.youtube.com/watch?v=a9PiulNAgJ8)", "[https://www.youtube.com/watch?v=a9PiulNAgJ8](https://www.youtube.com/watch?v=a9PiulNAgJ8)")
-*   **What are the key components and architecture of an AI podcast generator?** This includes understanding the necessary AI models (e.g., LLMs, TTS), APIs, and software frameworks.
-*   **What are the technical challenges involved?** Users want to know the difficulties they might encounter when building such a system.
-*   **What are the ethical considerations?** This includes concerns about authenticity, misinformation, privacy, and intellectual property.
-*   **What are the best AI voice generators to use?** Users are looking for recommendations on realistic and customizable AI voice generators.
-*   **How can AI be used to enhance podcast production?** This includes using AI for script generation, audio editing, noise reduction, and content summarization.
-*   **How can I monetize an AI podcast?** Users are interested in learning about different monetization strategies, such as sponsorships, advertising, and premium content.
-*   **What are the use cases for AI podcast generators?** This includes educational content, news summaries, personalized content, and more.
-*   **What open-source options are available?** Users are interested in open-source tools and libraries for building AI podcast generators.
+*   **"Zelf beleggen ING"**: This is the most direct and common search, indicating a general interest in self-directed investing through ING.
+*   **"Zelf beleggen beginnen ING"**: This shows users are looking for information on how to get started with self-directed investing specifically with ING.
+*   **"ING beleggen"**: A broader search, but still focused on investing with ING.
 
-**II. Key Subtopics & Related Keywords:**
+**2. Key Questions & Subtopics**
 
-*   **AI Models:** Large Language Models (LLMs), Text-to-Speech (TTS), Natural Language Processing (NLP)
-*   **AI Voice Generators:** ElevenLabs, Murf.ai, Play.ht, Google Text-to-Speech, Amazon Polly, NaturalReaders, Resemble AI, Voicing AI
-*   **Open Source Tools:** Podcastfy AI, 302 AI Podcast Generator, aastroza/ai-podcast-generator
-*   **Platforms & Frameworks:** Next.js, Python, Google's NotebookLM, Wondercraft, Podcastle, Descript, Riverside.fm, Recast Studio
-*   **Content Formats:** Text, PDFs, URLs, YouTube videos, images
-*   **Podcast Creation Steps:** Script generation, voice selection, audio editing, music integration, publishing
-*   **Ethical Considerations:** Authenticity, transparency, misinformation, privacy, intellectual property, bias
-*   **Monetization:** Sponsorships, advertising, premium content, subscriptions, affiliate marketing
-*   **Technical Challenges:** Voice cloning glitches, structural flaws, content quality, maintaining human connection
-*   **AI Podcast Generator Features:** Multi-language support, voice customization, background music, one-click publishing, multi-speaker support
+*   **Costs:**
+    *   **"ING beleggen kosten"**:  A very important factor for potential investors. People want to understand the fees associated with ING's investment platforms.
+    *   "Tarieven en kosten van zelf beleggen - Zelf op de Beurs - ING"
+*   **Experiences/Reviews:**
+    *   **"ING beleggen ervaringen"**:  Potential investors seek reviews and experiences from current ING users.
+*   **Alternatives:**
+    *   "ING beleggen: handig of zijn er betere alternatieven?"
+    *   **"Beste beleggingsplatform Nederland"**: Users are comparing ING to other investment platforms in the Netherlands.
+*   **Specifics of Investing with ING:**
+    *   **"Aandelen kopen ING"**:  Interest in buying stocks through ING's platform.
+    *   "Hoe koop je ING Group NV aandelen"
+*   **Risks:**
+    *   **"Risico's beleggen ING"**: Understanding the risks associated with investing through ING.
+    *   "De risico's van beleggen per beleggingsvorm op een rijtje | ING"
+*   **Beginner Information:**
+    *   **"Beleggen voor beginners Nederland"**:  General information for investment beginners in the Netherlands.
+    *   "Beleggen voor beginners: stappenplan - Consumentenbond"
 
-**III. Market Context & Trends:**
+**3. Related Keywords & Phrases**
 
-*   **Growth:** The AI in podcasting market is experiencing rapid growth and is expected to reach billions of dollars in the coming years. (e.g., $26 billion by 2033 - "[https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7FKV2UzSSf5-7zrojUkPsrLG17jKzpEKtwrL9XgPVfLWncGhsCMlWOrZFw5X7nyaZcDClPUUzEin2lF1RLMs5089OyIDNgOgmjBhj4YEVlt_Mmqlo7h0Fe0MpL5T8EMPHWfAdrCT6N0-eCgDowrejwvuleGBt1Y51](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7FKV2UzSSf5-7zrojUkPsrLG17jKzpEKtwrL9XgPVfLWncGhsCMlWOrZFw5X7nyaZcDClPUUzEin2lF1RLMs5089OyIDNgOgmjBhj4YEVlt_Mmqlo7h0Fe0MpL5T8EMPHWfAdrCT6N0-eCgDowrejwvuleGBt1Y51)")
-*   **Adoption:** A significant percentage of podcast creators are already experimenting with AI tools to streamline their production process. (e.g., over 80% - "[https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBW6i3fNNY6_-wfStKgAH1N1IkRtu7YFGOb8cR0gujP9pSwlWYOt7dPW8A8171WtWMd-UbzHG5jEblXGxlGIGeLhsT1SK1FqpsViEYLDE53MvWKbORnSBYG64-A8SLcpwURoq0fIyKRWWhgiiNLPNX](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBW6i3fNNY6_-wfStKgAH1N1IkRtu7YFGOb8cR0gujP9pSwlWYOt7dPW8A8171WtWMd-UbzHG5jEblXGxlGIGeLhsT1SK1FqpsViEYLDE53MvWKbORnSBYG64-A8SLcpwURoq0fIyKRWWhgiiNLPNX)")
-*   **Trends:**
-    *   **Personalization:** AI is enabling hyper-personalized podcast experiences tailored to individual listener preferences.
-    *   **Multilingual Support:** AI can translate and revoice content in multiple languages, expanding global reach.
-    *   **Realistic Voices:** Advancements in AI voice synthesis are leading to the development of voices indistinguishable from human speakers.
-    *   **Dynamic Ad Placement:** AI is used to place ads in podcast episodes in real-time based on listener data.
-    *   **AI Co-hosts:** AI voice tools are creating synthetic podcast hosts with believable personalities.
-*   **Ethical Considerations are Paramount:** Transparency about AI usage is crucial for building trust with audiences.
+*   **"Eenvoudig Beleggen"**: ING's passive investing option.
+*   **"Zelf op de Beurs"**: ING's self-directed investing platform.
+*   **"Vermogensbeheer ING"**: ING's wealth management services (for higher investment amounts).
+*   **"Beleggingsrekening ING"**: Investment account at ING.
+*   **"Mobiel Beleggen App ING"**: ING's mobile investing app.
+*   **"Aandelen"**: Stocks
+*   **"ETF"**: Exchange Traded Funds (trackers)
+*   **"Obligaties"**: Bonds
+*   **"Beleggingsfondsen"**: Investment funds
 
-**IV. Comprehensive Insights:**
+**4. Market Context & Trends**
 
-*   **Building an AI podcast generator involves a combination of AI technologies, including LLMs for script generation and TTS for voice synthesis.**
-*   **Several open-source tools and commercial platforms are available to help with this process.**
-*   **Ethical considerations are important, and creators should be transparent about their use of AI.**
-*   **The market for AI podcasting tools is growing rapidly, driven by the increasing demand for audio content and the desire to streamline production.**
-*   **AI is transforming the podcasting industry by making it easier for anyone to create, scale, and monetize podcasts.**
+*   **Online Brokers:** The search results show comparisons of ING to other online brokers like DEGIRO, eToro, Trade Republic, and Lynx.nl. These platforms often compete on fees, user experience, and available investment options.
+*   **Low Interest Rates:** The context is that traditional savings accounts offer low returns, making investing a more attractive option for growing wealth.
+*   **"Beste online broker van Nederland"**: Users are actively searching for the best online broker in the Netherlands, indicating a competitive market.
+*   **"Trends Beleggen Live"**: There's a trend towards platforms offering real-time data, expert articles, and AI-powered tools for investors.
+*   **"Trends investeert in platform Trends Beleggen Live"**
+*   **"ING, KBC en zeven andere banken bereiden euro-stablecoin voor"**: Indicates innovation and exploration of new technologies within the banking and investment sector.
+*   **"Online Shopping"**: Investing in online shopping trends.
 
-In summary, building an AI Podcast Generator is a technically challenging but increasingly feasible project. The search results highlight the availability of numerous tools, resources, and examples to guide developers. However, a deep technical dive must also consider the ethical implications and strive for authenticity and quality in the generated content.
+**5. ING Specifics**
+
+*   **ING's offerings**: ING offers different ways to invest, including "Eenvoudig Beleggen" (easy investing), "Zelf op de Beurs" (self-directed investing), and "Vermogensbeheer" (wealth management).
+*   **Costs**: ING charges fees for its investment services, including a service fee and transaction costs. The specific costs depend on the chosen investment method.
+*   **Risks**: ING warns that investing involves risks, and investors may lose (part of) their investment.
+*   **Minimum Investment**: While you can start with a small amount, ING suggests a minimum of €1,000 or €2,000 for "Zelf op de Beurs" to make it worthwhile, considering the costs.
+*   **Customer Reviews**: Some reviews of ING's investment services are not very positive.
+
+In summary, people searching for "Zelf beleggen? Lees hier hoe je zelf kunt beginnen - ING" are interested in the costs, risks, and potential returns of self-directed investing with ING, and they are comparing ING to other online brokers in the Netherlands. They are also looking for beginner-friendly information and guidance on how to get started.
