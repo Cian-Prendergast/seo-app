@@ -2,12 +2,13 @@ from typing import TypedDict, Optional, List, Dict, Any, Annotated
 from pydantic import BaseModel
 
 class ContentOptimizationState(TypedDict):
-    url: Annotated[str, "single"]  # Only one value allowed per step
+    url: Annotated[str, "single"]
     title: Optional[str]
     page_content: Optional[str]
     search_results: Optional[str]
     main_query: Optional[str]
     ai_overview: Optional[str]
+    paa_data: Optional[str]  # ← ADD THIS
     query_fanout_summary: Optional[str]
     comparison_report: Optional[str]
     current_step: str

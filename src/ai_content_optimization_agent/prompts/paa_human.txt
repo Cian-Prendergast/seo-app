@@ -1,0 +1,9 @@
+Extract and format the People Also Ask questions for: "{query}"
+
+From the PAA data provided, create a structured summary that:
+- Lists all questions clearly
+- Includes answers where available
+- Notes the source of each answer
+- Identifies patterns in user questions
+
+Format as clean Markdown.

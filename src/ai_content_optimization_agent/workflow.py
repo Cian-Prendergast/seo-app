@@ -6,10 +6,10 @@ from agents.query_extractor import query_extractor_node
 from agents.ai_overview_retriever import ai_overview_node
 from agents.summarizer import summarizer_node
 from agents.optimizer import optimizer_node
+from agents.paa_retriever import paa_retriever_node
 import logging
 
 def create_workflow():
-    logging.basicConfig(level=logging.INFO)
     workflow = StateGraph(ContentOptimizationState)
     
     # Add all nodes
@@ -17,16 +17,18 @@ def create_workflow():
     workflow.add_node("query_researcher", query_researcher_node)
     workflow.add_node("query_extractor", query_extractor_node)
     workflow.add_node("ai_overview_retriever", ai_overview_node)
+    workflow.add_node("paa_retriever", paa_retriever_node) 
     workflow.add_node("summarizer", summarizer_node)
     workflow.add_node("content_optimizer", optimizer_node)
     
-    # Sequential flow - no parallel execution
+    # Sequential flow
     workflow.add_edge(START, "title_scraper")
     workflow.add_edge("title_scraper", "query_researcher")
     workflow.add_edge("query_researcher", "query_extractor")
-    workflow.add_edge("query_extractor", "ai_overview_retriever")  # Run first
-    workflow.add_edge("ai_overview_retriever", "summarizer")       # Then run this
-    workflow.add_edge("summarizer", "content_optimizer")           # Finally this
+    workflow.add_edge("query_extractor", "ai_overview_retriever")
+    workflow.add_edge("ai_overview_retriever", "paa_retriever")  
+    workflow.add_edge("paa_retriever", "summarizer")              
+    workflow.add_edge("summarizer", "content_optimizer")
     workflow.add_edge("content_optimizer", END)
     
     return workflow.compile()
