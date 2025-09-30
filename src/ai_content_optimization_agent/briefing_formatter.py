@@ -38,10 +38,23 @@ def generate_ing_briefing(state: ContentOptimizationState) -> str:
     # Add data rows
     add_row(table, 'URL', state.get('url'))
     
-    competitor_urls = state.get('competitor_urls', [])
-    add_row(table, 'SERP 1#', competitor_urls[0] if len(competitor_urls) > 0 else 'Geen concurrent gevonden')
-    add_row(table, 'SERP 2#', competitor_urls[1] if len(competitor_urls) > 1 else 'Geen concurrent gevonden')
-    add_row(table, 'SERP 3#', competitor_urls[2] if len(competitor_urls) > 2 else 'Geen concurrent gevonden')
+    # SERP results with URLs and titles
+    serp_results = state.get('serp_results', {})
+    if serp_results and serp_results.get('results'):
+        results = serp_results['results']
+        for i in range(3):
+            if i < len(results):
+                result = results[i]
+                serp_info = f"{result.get('title', 'No title')}\n{result.get('url', 'No URL')}"
+                add_row(table, f'SERP {i+1}#', serp_info)
+            else:
+                add_row(table, f'SERP {i+1}#', 'Geen concurrent gevonden')
+    else:
+        # Fallback to existing competitor_urls logic
+        competitor_urls = state.get('competitor_urls', [])
+        add_row(table, 'SERP 1#', competitor_urls[0] if len(competitor_urls) > 0 else 'Geen concurrent gevonden')
+        add_row(table, 'SERP 2#', competitor_urls[1] if len(competitor_urls) > 1 else 'Geen concurrent gevonden')
+        add_row(table, 'SERP 3#', competitor_urls[2] if len(competitor_urls) > 2 else 'Geen concurrent gevonden')
     
     add_row(table, 'Opmerkelijk', state.get('notable_observations'))
     add_row(table, 'Type pagina', state.get('page_type'))

@@ -49,10 +49,14 @@ class AIOverviewRetrieverAgent(BaseAgent):
                 print(f"   📝 Content: {ai_overview}")
             print()
             
+            # Get SERP URLs and titles for state storage
+            serp_data = self._get_serp_data_for_storage(main_query)
+            
             return {
                 **state,
                 "ai_overview": ai_overview,
                 "output_files": output_files,
+                "serp_results": serp_data,  # Store SERP results in state
                 "current_step": "ai_overview_retrieved"
             }
             
@@ -120,6 +124,9 @@ class AIOverviewRetrieverAgent(BaseAgent):
             response_preview = json.dumps(data, indent=2)[:500]
             self.log(f"Response Preview: {response_preview}...")
             
+            # Extract and print URLs/titles from SERP results
+            self._print_serp_urls_and_titles(data, query)
+            
             # Extract AI overview from response
             ai_overview = self._extract_ai_overview(data, query)
             
@@ -144,6 +151,112 @@ class AIOverviewRetrieverAgent(BaseAgent):
         except Exception as e:
             raise Exception(f"Unexpected error: {str(e)}")
     
+    def _get_serp_data_for_storage(self, query: str) -> dict:
+        """Get SERP data for state storage without printing"""
+        try:
+            if not self.bright_data_api_key or not self.bright_data_zone:
+                return {}
+            
+            url = "https://api.brightdata.com/request"
+            headers = {
+                "Authorization": f"Bearer {self.bright_data_api_key}",
+                "Content-Type": "application/json"
+            }
+            
+            encoded_query = urllib.parse.quote(query)
+            search_url = f"https://www.google.com/search?q={encoded_query}&hl=en&gl=us&brd_json=1"
+            
+            payload = {
+                "zone": self.bright_data_zone,
+                "url": search_url,
+                "format": "raw"
+            }
+            
+            response = requests.post(url, json=payload, headers=headers, timeout=30)
+            
+            if response.status_code == 200:
+                data = response.json()
+                
+                # Extract organic results
+                results = []
+                if "organic_results" in data:
+                    results = data.get("organic_results", [])
+                elif "results" in data:
+                    results = data.get("results", [])
+                elif "organic" in data:
+                    results = data.get("organic", [])
+                
+                # Process results for storage
+                processed_results = []
+                for result in results[:10]:
+                    title = result.get("title", "") or result.get("name", "")
+                    url = result.get("url", "") or result.get("link", "")
+                    snippet = result.get("snippet", "") or result.get("description", "")
+                    
+                    if title and url:
+                        processed_results.append({
+                            "title": title,
+                            "url": url,
+                            "snippet": snippet
+                        })
+                
+                return {
+                    "query": query,
+                    "results": processed_results,
+                    "total_results": len(processed_results)
+                }
+            
+        except Exception as e:
+            self.log(f"Error getting SERP data for storage: {str(e)}")
+            
+        return {}
+
+    def _print_serp_urls_and_titles(self, data: dict, query: str):
+        """Extract and print URLs and page titles from SERP results"""
+        print(f"\n🔗 SERP Results for '{query}':")
+        print("=" * 80)
+        
+        # Try different possible locations for organic results
+        results = []
+        if "organic_results" in data:
+            results = data.get("organic_results", [])
+        elif "results" in data:
+            results = data.get("results", [])
+        elif "organic" in data:
+            results = data.get("organic", [])
+        
+        if not results:
+            print("❌ No organic results found in SERP data")
+            print(f"Available data keys: {list(data.keys()) if isinstance(data, dict) else 'Not a dict'}")
+            return
+        
+        print(f"📊 Found {len(results)} organic results\n")
+        
+        # Extract and print URL/title pairs
+        for i, result in enumerate(results[:10], 1):  # Show top 10 results
+            title = result.get("title", "") or result.get("name", "")
+            url = result.get("url", "") or result.get("link", "")
+            snippet = result.get("snippet", "") or result.get("description", "")
+            
+            if title and url:
+                print(f"{i:2d}. 📄 {title}")
+                print(f"    🌐 {url}")
+                if snippet:
+                    # Truncate snippet to 100 characters
+                    snippet_preview = snippet[:100] + "..." if len(snippet) > 100 else snippet
+                    print(f"    💭 {snippet_preview}")
+                print()
+            elif title or url:
+                print(f"{i:2d}. ⚠️  Incomplete result:")
+                if title:
+                    print(f"    📄 {title}")
+                if url:
+                    print(f"    🌐 {url}")
+                print()
+        
+        print("=" * 80)
+        print()
+
     def _extract_ai_overview(self, data: dict, query: str) -> str:
         """Extract AI overview from response with detailed logging"""
         

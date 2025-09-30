@@ -11,17 +11,18 @@
 
 ---
 
-# 🚀 GEO AI Crew
 
-GEO Agent Crew uses [CrewAI](https://crewai.com) to automate AI-driven webpage content audits. Enter a URL, and the system accesses the webpage, extracts its title, generates and summarizes related queries using [Gemini with the Google Search tool](https://ai.google.dev/gemini-api/docs/google-search), fetches Google AI Overviews via [Bright Data SERP API](https://brightdata.com/products/serp-api), compares results, and outputs actionable page-level optimization suggestions in Markdown file.
+# 🚀 GEO AI Content Optimization Agent
+
+This project uses LangGraph to automate AI-driven webpage content audits. Enter a URL, and the system accesses the webpage, extracts its title, generates and summarizes related queries using Gemini with the Google Search tool, fetches Google AI Overviews via Bright Data SERP API, compares results, and outputs actionable page-level optimization suggestions in Markdown files.
 
 <img src="https://github.com/brightdata/geo-ai-agent/blob/main/GEO%20diagram.png"/>
 
 ---
 
-## 🤖 Understanding Your Crew
+## 🤖 Understanding Your Workflow
 
-The `ai-content-optimization-agent` Crew is composed of six AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+The `ai_content_optimization_agent` workflow is composed of six AI agents, each with unique roles and goals. These agents collaborate on a series of tasks, leveraging their collective skills to achieve complex objectives. All logic is now implemented in Python using LangGraph, with agent definitions in `src/ai_content_optimization_agent/agents/`.
 
 ## 🛠️ Installation
 
@@ -68,47 +69,44 @@ BRIGHT_DATA_API_KEY="<BRIGHT_DATA_API_KEY>"
 BRIGHT_DATA_ZONE="<YOUR_BRIGHT_DATA_ZONE>"
 ```
 
+
 ## ▶️ Running the Project
 Activate the `.venv` created by the `uv sync` command:
 ```bash
- source .venv/bin/activate
+source .venv/bin/activate
 ```
 Or, on Windows:
 ```powershell
 .venv/Scripts/activate
 ```
 
-With the virtual environment activated, start your crew of AI agents by running the following command from the root folder of your project:
-
+With the virtual environment activated, start the LangGraph workflow by running:
 ```bash
-crewai run
+python src/ai_content_optimization_agent/main.py
+```
+or from the project root (if your PYTHONPATH is set):
+```bash
+python -m src.ai_content_optimization_agent.main
 ```
 
-This command initializes the `ai-content-optimization-agent` crew, assembling the agents and assigning them tasks as defined in the CrewAI configuration files.
-
-☑️ This application will produce a `output/report.md` file, along with other `ouput/*.md` files containing intermediate data and results from the agents.
+This will prompt you for a URL and run the full AI content optimization workflow. Output files will be saved in the `output/` directory, including `output/report.md` and other intermediate results.
 
 ---
+
 
 ### ⚙️ Customizing
-- 🔧 Update the `MODEL` environment variable to change the Gemini model used by this crew of agents.
-- 🧑‍💻 Edit `src/ai_content_optimization_agent/config/agents.yaml` to modify the definitions of the agents. 
-- 📋 Edit `src/ai_content_optimization_agent/config/tasks.yaml` to modify the definitions of the tasks assigned to the agents. 
-- 🛠️ Update `src/ai_content_optimization_agent/crew.py` to integrate other AI models or add your own logic and tools.
-- ⚡ Edit `src/ai_content_optimization_agent/main.py` to add custom inputs for your agents and tasks.
+- 🔧 Update the `MODEL` environment variable to change the Gemini model used by the workflow.
+- 🧑‍💻 Edit agent logic in `src/ai_content_optimization_agent/agents/` to modify agent behavior.
+- ⚡ Edit `src/ai_content_optimization_agent/main.py` to add custom inputs or workflow logic.
 
 ---
+
 
 ## 💬 Support
 
-For support, questions, or feedback regarding the `ai-content-optimization-agent` Crew or CrewAI:
-
+For support, questions, or feedback regarding the `ai_content_optimization_agent` workflow:
 - ☀️ Visit Bright Data's [SERP API docs](https://docs.brightdata.com/scraping-automation/serp-api/introduction)
-- 📖 Visit CrewAI's [documentation](https://docs.crewai.com)
-- 🐙 Reach out to CrewAI through the [GitHub repository](https://github.com/joaomdmoura/crewai)
-- 💬 [Join Discord](https://discord.com/invite/X4JWnZnxPb)
-- 💡 [Chat with CrewAI's docs](https://chatg.pt/DWjSBZn)
 
 ---
 
-✨ Let's create wonders together with the power and simplicity of Bright Data & CrewAI.
+✨ Let's create wonders together with the power and simplicity of Bright Data & LangGraph.

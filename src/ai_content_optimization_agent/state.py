@@ -22,6 +22,7 @@ class ContentOptimizationState(TypedDict):
     competitive_analysis: Optional[Dict[str, Any]]
     content_topics: Optional[List[str]]
     content_gaps: Optional[List[Dict[str, str]]]
+    serp_results: Optional[Dict[str, Any]]  # Store SERP URLs and titles
     
     # NEW FIELDS FOR ING BRIEFING FORMAT
     focus_keyword: Optional[str]  # User-provided or auto-extracted

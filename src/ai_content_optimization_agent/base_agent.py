@@ -7,7 +7,7 @@ import logging
 from state import ContentOptimizationState
 
 class BaseAgent(ABC):
-    """Base class for all agents - replaces CrewAI Agent"""
+    """Base class for all agent"""
     def __init__(self, name: str, model: Optional[str] = None, verbose: bool = True):
         self.name = name
         self.verbose = verbose
