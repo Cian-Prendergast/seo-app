@@ -10,7 +10,7 @@ class AIOverviewRetrieverAgent(BaseAgent):
     def __init__(self):
         super().__init__("ai_overview_retriever")
         self.bright_data_api_key = os.getenv("BRIGHT_DATA_API_KEY")
-        self.bright_data_zone = os.getenv("BRIGHT_DATA_ZONE")
+        self.bright_data_zone = os.getenv("BRIGHT_DATA_SERP_ZONE")
     
     def execute(self, state: ContentOptimizationState) -> ContentOptimizationState:
         self.log("Retrieving AI Overview")

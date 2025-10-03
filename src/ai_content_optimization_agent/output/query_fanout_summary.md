@@ -1,44 +1,52 @@
-```markdown
-## Summary of Query Fan-Out: "Zelf beleggen? Lees hier hoe je zelf kunt beginnen - ING"
+## Summary: "Zelf beleggen? Lees hier hoe je zelf kunt beginnen - ING" Query Fan-Out
 
-This summary analyzes the search queries related to the title "Zelf beleggen? Lees hier hoe je zelf kunt beginnen - ING" (Self-directed investing? Read here how you can start yourself - ING).  The analysis reveals key themes, user intents, and important keywords.
+This summary outlines the key findings from a web search analyzing user queries related to ING's self-directed investing platform, "Zelf op de Beurs."
 
 **1. Main Themes and Topics:**
 
-*   **Self-Directed Investing (Zelf Beleggen):**  Understanding the basics, how it works, and how to get started.
-*   **ING Specifics:**  Queries related to ING's investment offerings, costs, and user experiences.
-*   **Investment Types:**  Interest in various investment options like stocks (aandelen), bonds (obligaties), and ETFs.
-*   **Costs and Fees:**  A major concern for users, focusing on understanding and comparing costs across platforms.
-*   **Risk Management:**  Awareness and concern about the risks associated with investing.
-*   **Beginner Focus:**  A significant portion of users are new to investing and seeking beginner-friendly resources.
+*   **ING's Self-Directed Investing ("Zelf op de Beurs"):**  Focuses on understanding what it is, how it works, and its target audience (beginners and experienced investors).
+*   **Costs and Fees:**  A primary concern for users, including transaction fees, service fees, and currency conversion costs.
+*   **Risks of Investing:**  Users are actively seeking information on the inherent risks and how to manage them.
+*   **Investment Options:**  Interest in the types of assets available (stocks, bonds, ETFs, funds).
+*   **Platform and App Functionality:**  Queries related to the ING mobile app and its features (note: the ING Beleggen app was discontinued and functionalities moved to the main ING Bankieren app).
+*   **"Eenvoudig Beleggen" (Easy Investing):**  Understanding ING's simpler, managed investment option for beginners.
+*   **Sustainable Investing ("Duurzaam Beleggen"):**  Interest in environmentally and socially responsible investment choices.
+*   **Comparison with Competitors:**  Users are comparing ING's platform with other brokers.
+*   **Account Opening Process:**  Information on how to open an investment account with ING.
+*   **Tax Implications:**  Understanding the tax aspects of investing through ING.
 
 **2. Key Insights and Patterns:**
 
-*   **Beginner Interest:**  A large segment of users are beginners actively searching for guides, tips, and step-by-step instructions on how to start investing.
-*   **Cost Sensitivity:**  Users are highly concerned about costs and actively compare different investment platforms and brokers.
-*   **ING Evaluation:**  Many users are specifically researching ING's investment platform, seeking information on costs, experiences, and alternatives.
-*   **Risk Awareness:**  Users are aware of the risks involved in investing and are looking for information on risk management.
-*   **Comparison Shopping:**  Users are actively comparing self-directed investing with managed investing options.
-*   **Growing Interest:** The search results suggest a growing interest in self-directed investing.
+*   **Cost Sensitivity:** Users are highly sensitive to costs and actively compare fees across different platforms.
+*   **Risk Awareness:**  Investors are aware of the risks involved and seek information on risk management.
+*   **Beginner Focus:**  Significant interest in investing for beginners, indicating a growing segment of new investors.
+*   **Mobile-First Approach:**  Users expect a seamless mobile experience for managing their investments.
+*   **Low Interest Rate Impact:** Low interest rates on savings accounts are driving interest in investing.
+*   **ING's Strategy:** ING aims to attract a broad audience by offering both self-directed and managed investment options, leveraging its existing customer base and competitive pricing.
+*   **Diversification Importance:** The importance of diversifying investments to manage risk is a recurring theme.
+*   **Long-Term Perspective:** Investing is generally recommended for the long term (3+ years) to ride out market fluctuations.
 
 **3. Important Keywords and Phrases:**
 
-*   **Zelf beleggen:** Self-directed investing
-*   **Beleggen voor beginners:** Investing for beginners
-*   **Hoe begin ik met beleggen?:** How do I start investing?
-*   **ING beleggen:** ING investing
-*   **ING beleggen kosten:** ING investing costs
-*   **Risico's van beleggen:** Risks of investing
-*   **Aandelen kopen:** Buying stocks
-*   **ETF's:** Exchange Traded Funds
-*   **Online beleggen platformen vergelijken:** Compare online investing platforms
-*   **Brokers vergelijken:** Compare brokers
+*   Zelf beleggen (self-directed investing)
+*   Beginnen met beleggen (starting to invest)
+*   Beleggen voor beginners (investing for beginners)
+*   ING Zelf op de Beurs
+*   ING beleggen kosten (ING investing costs)
+*   ING beleggen app
+*   Eenvoudig Beleggen ING (Easy Investing ING)
+*   Duurzaam beleggen ING (Sustainable investing ING)
+*   Aandelen (stocks)
+*   ETF
+*   Beleggingsfondsen (investment funds)
+*   Beleggingsrekening openen (open investment account)
+*   Beleggen tips (investing tips)
+*   Beleggen risico's (investing risks)
 
 **4. User Intent Analysis:**
 
-*   **Informational:** Users are seeking information about self-directed investing, different investment options, and the risks involved.
-*   **Navigational:** Users are trying to find specific information about ING's investment platform and its offerings.
-*   **Comparative:** Users are comparing different investment platforms, brokers, and investment strategies (self-directed vs. managed).
-*   **Transactional:** Users are potentially looking to open an investment account and start investing.  The focus on "hoe begin ik met beleggen?" suggests a desire to take action.
-*   **Evaluation:** Users are evaluating whether ING is a suitable platform for their investment needs.
-```
+*   **Informational:** Users are seeking information about ING's self-directed investing platform, its features, costs, and risks.
+*   **Comparative:** Users are comparing ING's platform with other brokers to find the best option for their needs.
+*   **Transactional:** Users are interested in opening an investment account with ING and starting to invest.
+*   **Educational:** Users are looking for guidance and tips on how to invest, especially beginners.
+*   **Problem-Solving:** Users are seeking answers to specific questions about the platform, such as tax implications or minimum investment amounts.
