@@ -67,27 +67,53 @@ class PAARetrieverAgent(BaseAgent):
         }
         
         encoded_query = urllib.parse.quote(query)
-        # Add brd_json=1 to get structured data with PAA
-        search_url = f"https://www.google.com/search?q={encoded_query}&hl=en&gl=us&brd_json=1"
+        # Use simpler URL format for SERP API
+        search_url = f"https://www.google.com/search?q={encoded_query}"
         
         payload = {
             "zone": self.bright_data_zone,
             "url": search_url,
-            "format": "raw"
+            "format": "json"  # Changed from "raw" to "json" to get structured data
         }
         
-        self.log(f"Request URL: {search_url}")
+        print(f"[DEBUG PAA] Request URL: {search_url}")
+        print(f"[DEBUG PAA] Request payload: {json.dumps(payload)}")
+        print(f"[DEBUG PAA] Authorization header present: {'Authorization' in headers}")
         
         try:
+            print("[DEBUG PAA] Sending request to Bright Data API...")
             response = requests.post(url, headers=headers, json=payload, timeout=60)
             response.raise_for_status()
             
-            data = response.json()
+            # Check if response has content before parsing
+            response_text = response.text.strip()
+            print(f"[DEBUG PAA] Response status: {response.status_code}")
+            print(f"[DEBUG PAA] Response headers: {dict(response.headers)}")
+            print(f"[DEBUG PAA] Response content length: {len(response_text)}")
+            print(f"[DEBUG PAA] Response content (first 500 chars): {response_text[:500]}")
+            
+            if not response_text:
+                raise Exception("Empty response received from Bright Data API")
+            
+            # Parse response
+            try:
+                data = response.json()
+                print(f"[DEBUG PAA] JSON parsed successfully. Top-level keys: {list(data.keys()) if isinstance(data, dict) else 'Not a dict'}")
+            except json.JSONDecodeError as e:
+                print(f"[DEBUG PAA] Failed to parse JSON response. Full response text: {response_text}")
+                raise Exception(f"Invalid JSON response: {str(e)}")
+            
             return self._extract_paa(data, query)
             
         except requests.exceptions.HTTPError as e:
             self.log(f"HTTP Error: {e.response.status_code}", "error")
-            raise Exception(f"HTTP {e.response.status_code}: {e.response.text[:500]}")
+            error_msg = f"HTTP {e.response.status_code}: {e.response.text[:500]}"
+            # Check for common authentication issues
+            if e.response.status_code == 401:
+                error_msg += "\nThis appears to be an authentication error. Please check your BRIGHT_DATA_API_KEY."
+            elif e.response.status_code == 403:
+                error_msg += "\nThis appears to be an authorization error. Please check your zone permissions and API key."
+            raise Exception(error_msg)
         except Exception as e:
             raise Exception(f"PAA request failed: {str(e)}")
     

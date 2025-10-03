@@ -29,7 +29,7 @@ class AIOverviewRetrieverAgent(BaseAgent):
                 self.log("AI Overview retrieved successfully from SERP API")
             else:
                 error_msg = "No AI overview found in SERP results (this might be normal - not all searches have AI overviews)"
-                self.log(error_msg, "info")  # Changed to info since this is normal
+                self.log(error_msg, "info")
                 return {
                     **state,
                     "errors": state.get("errors", []) + [error_msg],
@@ -61,7 +61,7 @@ class AIOverviewRetrieverAgent(BaseAgent):
         if not self.bright_data_api_key or not self.bright_data_zone:
             raise ValueError("BRIGHT_DATA_API_KEY and BRIGHT_DATA_ZONE not configured")
         
-        # Debug: Log configuration
+        # Debug: Log configuration (first 10 chars of API key for security)
         self.log(f"API Key (first 10 chars): {self.bright_data_api_key[:10]}...")
         self.log(f"Zone: {self.bright_data_zone}")
         self.log(f"Query: {query}")
@@ -75,24 +75,27 @@ class AIOverviewRetrieverAgent(BaseAgent):
         
         # URL encode the query properly
         encoded_query = urllib.parse.quote(query)
-        search_url = f"https://www.google.com/search?q={encoded_query}&hl=en&gl=us&brd_json=1"
+        # Use simpler URL format for SERP API
+        search_url = f"https://www.google.com/search?q={encoded_query}"
         
         # Debug: Log request details
         self.log(f"Search URL: {search_url}")
         
-        # Correct payload format from Bright Data documentation
+        # Correct payload format for structured JSON data
         payload = {
             "zone": self.bright_data_zone,
             "url": search_url,
-            "format": "raw"
+            "format": "json"  # Changed from "raw" to "json" to get structured data
         }
         
         # Debug: Log the exact request
-        self.log(f"Request URL: {url}")
-        self.log(f"Request Headers: {json.dumps({k: v for k, v in headers.items() if k != 'Authorization'})}")
-        self.log(f"Request Payload: {json.dumps(payload)}")
+        print(f"[DEBUG AI_OVERVIEW] Request URL: {url}")
+        print(f"[DEBUG AI_OVERVIEW] Request Headers: {json.dumps({k: v for k, v in headers.items() if k != 'Authorization'})}")
+        print(f"[DEBUG AI_OVERVIEW] Request Payload: {json.dumps(payload)}")
+        print(f"[DEBUG AI_OVERVIEW] Authorization header present: {'Authorization' in headers}")
         
         try:
+            print("[DEBUG AI_OVERVIEW] Sending request to Bright Data API...")
             response = requests.post(url, json=payload, headers=headers, timeout=30)
             
             # Debug: Log response details
@@ -104,8 +107,23 @@ class AIOverviewRetrieverAgent(BaseAgent):
                 self.log(f"Response Body: {response.text}")
                 response.raise_for_status()
             
+            # Check if response has content before parsing
+            response_text = response.text.strip()
+            print(f"[DEBUG AI_OVERVIEW] Response status: {response.status_code}")
+            print(f"[DEBUG AI_OVERVIEW] Response headers: {dict(response.headers)}")
+            print(f"[DEBUG AI_OVERVIEW] Response content length: {len(response_text)}")
+            print(f"[DEBUG AI_OVERVIEW] Response content (first 500 chars): {response_text[:500]}")
+            
+            if not response_text:
+                raise Exception("Empty response received from Bright Data API")
+            
             # Parse response
-            data = response.json()
+            try:
+                data = response.json()
+                print(f"[DEBUG AI_OVERVIEW] JSON parsed successfully. Top-level keys: {list(data.keys()) if isinstance(data, dict) else 'Not a dict'}")
+            except json.JSONDecodeError as e:
+                print(f"[DEBUG AI_OVERVIEW] Failed to parse JSON response. Full response text: {response_text}")
+                raise Exception(f"Invalid JSON response: {str(e)}")
             
             # Debug: Log response structure (first 500 chars)
             response_preview = json.dumps(data, indent=2)[:500]
@@ -127,6 +145,11 @@ class AIOverviewRetrieverAgent(BaseAgent):
             error_details = f"HTTP {e.response.status_code}: {e.response.reason}"
             if e.response.text:
                 error_details += f"\nResponse body: {e.response.text[:500]}"
+            # Check for common authentication issues
+            if e.response.status_code == 401:
+                error_details += "\nThis appears to be an authentication error. Please check your BRIGHT_DATA_API_KEY."
+            elif e.response.status_code == 403:
+                error_details += "\nThis appears to be an authorization error. Please check your zone permissions and API key."
             raise Exception(error_details)
         
         except requests.exceptions.RequestException as e:

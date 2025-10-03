@@ -19,7 +19,7 @@ class MainQueryExtractorAgent(BaseAgent):
             }
         
         try:
-            # ✅ REPLACE the hardcoded prompts with these 2 lines:
+            # see system and human prompts in /prompts
             system_prompt = load_prompt("query_extractor_system")
             human_prompt = format_prompt("query_extractor_human", search_results=search_results)
             

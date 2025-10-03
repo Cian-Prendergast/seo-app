@@ -1,46 +1,44 @@
 ```markdown
 ## Summary of Query Fan-Out: "Zelf beleggen? Lees hier hoe je zelf kunt beginnen - ING"
 
-This summary outlines the key themes, insights, and user intents derived from the query fan-out related to ING's "Zelf Beleggen" (Self-Directed Investing) offering.
+This summary analyzes the search queries related to the title "Zelf beleggen? Lees hier hoe je zelf kunt beginnen - ING" (Self-directed investing? Read here how you can start yourself - ING).  The analysis reveals key themes, user intents, and important keywords.
 
 **1. Main Themes and Topics:**
 
-*   **ING's "Zelf Beleggen" (Self-Directed Investing):**  Focuses on understanding the product itself, including its features, functionality, and how it works.
-*   **Alternatives to "Zelf Beleggen":** Explores other investment options offered by ING, such as "Eenvoudig Beleggen" (Easy Investing) and "Vermogensbeheer" (Asset Management).
-*   **General Investing Education:** Covers fundamental investing concepts for beginners, including risk/return, saving vs. investing, and initial investment amounts.
-*   **Specific Investing Considerations:**  Addresses topics like sustainable investing (ESG), tax implications, and the suitability test.
-*   **Market Context and Trends:**  Considers the impact of current market conditions and popular investment trends in the Netherlands.
+*   **Self-Directed Investing (Zelf Beleggen):**  Understanding the basics, how it works, and how to get started.
+*   **ING Specifics:**  Queries related to ING's investment offerings, costs, and user experiences.
+*   **Investment Types:**  Interest in various investment options like stocks (aandelen), bonds (obligaties), and ETFs.
+*   **Costs and Fees:**  A major concern for users, focusing on understanding and comparing costs across platforms.
+*   **Risk Management:**  Awareness and concern about the risks associated with investing.
+*   **Beginner Focus:**  A significant portion of users are new to investing and seeking beginner-friendly resources.
 
 **2. Key Insights and Patterns:**
 
-*   **Beginner Focus:** A significant portion of the queries indicates users are new to investing and require basic explanations.
-*   **Cost Sensitivity:**  Users are highly interested in understanding the fees and costs associated with "Zelf Beleggen."
-*   **Comparison Shopping:**  Users are actively comparing "Zelf Beleggen" with other ING investment products to determine the best fit.
-*   **Risk Awareness:**  Users are concerned about the risks involved in self-directed investing and seek information on mitigating them.
-*   **Sustainability Interest:**  There's a notable interest in sustainable investment options.
+*   **Beginner Interest:**  A large segment of users are beginners actively searching for guides, tips, and step-by-step instructions on how to start investing.
+*   **Cost Sensitivity:**  Users are highly concerned about costs and actively compare different investment platforms and brokers.
+*   **ING Evaluation:**  Many users are specifically researching ING's investment platform, seeking information on costs, experiences, and alternatives.
+*   **Risk Awareness:**  Users are aware of the risks involved in investing and are looking for information on risk management.
+*   **Comparison Shopping:**  Users are actively comparing self-directed investing with managed investing options.
+*   **Growing Interest:** The search results suggest a growing interest in self-directed investing.
 
 **3. Important Keywords and Phrases:**
 
-*   "Zelf Beleggen" (Self-Directed Investing)
-*   "Eenvoudig Beleggen" (Easy Investing)
-*   "Vermogensbeheer" (Asset Management)
-*   "Beleggen voor Beginners" (Investing for Beginners)
-*   "Rendement en Risico" (Return and Risk)
-*   "Sparen vs. Beleggen" (Saving vs. Investing)
-*   "Duurzaam Beleggen" (Sustainable Investing)
-*   "Passendheidstoets" (Suitability Test)
-*   "Aandelen" (Stocks)
-*   "Obligaties" (Bonds)
-*   "ETF's"
-*   "Fondsen" (Funds)
-*   "ING Zelf op de Beurs" (ING's Self-Directed Investing Platform)
+*   **Zelf beleggen:** Self-directed investing
+*   **Beleggen voor beginners:** Investing for beginners
+*   **Hoe begin ik met beleggen?:** How do I start investing?
+*   **ING beleggen:** ING investing
+*   **ING beleggen kosten:** ING investing costs
+*   **Risico's van beleggen:** Risks of investing
+*   **Aandelen kopen:** Buying stocks
+*   **ETF's:** Exchange Traded Funds
+*   **Online beleggen platformen vergelijken:** Compare online investing platforms
+*   **Brokers vergelijken:** Compare brokers
 
 **4. User Intent Analysis:**
 
-*   **Informational:** Users seek to understand what "Zelf Beleggen" is, how it works, and its features.
-*   **Comparative:** Users want to compare "Zelf Beleggen" with other investment options offered by ING.
-*   **Educational:** Users need basic investing knowledge and guidance for beginners.
-*   **Practical:** Users are looking for information on how to start investing, including account setup, funding, and minimum investment amounts.
-*   **Evaluative:** Users are assessing the risks and benefits of "Zelf Beleggen" to determine if it's the right choice for them.
-*   **Contextual:** Users want to understand how current market conditions and trends might affect their investment decisions.
+*   **Informational:** Users are seeking information about self-directed investing, different investment options, and the risks involved.
+*   **Navigational:** Users are trying to find specific information about ING's investment platform and its offerings.
+*   **Comparative:** Users are comparing different investment platforms, brokers, and investment strategies (self-directed vs. managed).
+*   **Transactional:** Users are potentially looking to open an investment account and start investing.  The focus on "hoe begin ik met beleggen?" suggests a desire to take action.
+*   **Evaluation:** Users are evaluating whether ING is a suitable platform for their investment needs.
 ```
