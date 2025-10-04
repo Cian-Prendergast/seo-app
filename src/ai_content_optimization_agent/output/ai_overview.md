@@ -1,4 +1,4 @@
-# Search Results for 'Zelf beleggen ING'
+# Search Results for 'zelf beleggen ING'
 
 Raw data available but no AI overview found.
 
